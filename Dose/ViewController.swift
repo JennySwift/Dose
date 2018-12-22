@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var netCarbsPerUnitField: UITextField!
     @IBOutlet weak var minutesWalkingField: UITextField!
     
+    @IBOutlet weak var stackViewBottomConstraint: NSLayoutConstraint!
     var bloodSugarNow: Float = 3.4
     var bloodSugarGoal: Float = 4.5
     var netCarbs: Float = 0.0

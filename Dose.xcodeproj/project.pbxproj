@@ -14,6 +14,8 @@
 		BDE52AD021CC682E001EC7D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE52ACE21CC682E001EC7D2 /* LaunchScreen.storyboard */; };
 		BDE52ADB21CC682E001EC7D2 /* DoseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE52ADA21CC682E001EC7D2 /* DoseTests.swift */; };
 		BDE52AE621CC682E001EC7D2 /* DoseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE52AE521CC682E001EC7D2 /* DoseUITests.swift */; };
+		BDE52AF421CE4A82001EC7D2 /* NumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE52AF321CE4A81001EC7D2 /* NumberTableViewCell.swift */; };
+		BDE52AF621CE4F8A001EC7D2 /* DoseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE52AF521CE4F89001EC7D2 /* DoseTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		BDE52AE121CC682E001EC7D2 /* DoseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE52AE521CC682E001EC7D2 /* DoseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseUITests.swift; sourceTree = "<group>"; };
 		BDE52AE721CC682F001EC7D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDE52AF321CE4A81001EC7D2 /* NumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTableViewCell.swift; sourceTree = "<group>"; };
+		BDE52AF521CE4F89001EC7D2 /* DoseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,9 @@
 			children = (
 				BDE52AC521CC682A001EC7D2 /* AppDelegate.swift */,
 				BDE52AC721CC682A001EC7D2 /* ViewController.swift */,
+				BDE52AF321CE4A81001EC7D2 /* NumberTableViewCell.swift */,
 				BDE52AC921CC682A001EC7D2 /* Main.storyboard */,
+				BDE52AF521CE4F89001EC7D2 /* DoseTableViewController.swift */,
 				BDE52ACC21CC682E001EC7D2 /* Assets.xcassets */,
 				BDE52ACE21CC682E001EC7D2 /* LaunchScreen.storyboard */,
 				BDE52AD121CC682E001EC7D2 /* Info.plist */,
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE52AF421CE4A82001EC7D2 /* NumberTableViewCell.swift in Sources */,
 				BDE52AC821CC682A001EC7D2 /* ViewController.swift in Sources */,
+				BDE52AF621CE4F8A001EC7D2 /* DoseTableViewController.swift in Sources */,
 				BDE52AC621CC682A001EC7D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
