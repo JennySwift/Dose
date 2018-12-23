@@ -16,6 +16,7 @@ struct Row {
 
 class DoseTableViewController: UITableViewController {
     @IBOutlet weak var doseLabel: UILabel!
+    var activeTextField: UITextField?
     
     @IBAction func resetFields(_ sender: Any) {
         print("reseting fields...")
@@ -171,6 +172,7 @@ class DoseTableViewController: UITableViewController {
     }
     
     @objc func keyboardWillHide(_ notification: NSNotification) {
+        print("keyboard will hide")
         calculateDose()
     }
 
@@ -180,13 +182,8 @@ class DoseTableViewController: UITableViewController {
     }
     
     @objc func dismissKeyboard() {
-//        bloodSugarNowField.resignFirstResponder()
-//        bloodSugarGoalField.resignFirstResponder()
-//        netCarbsField.resignFirstResponder()
-//        lantusField.resignFirstResponder()
-//        novoRapidField.resignFirstResponder()
-//        netCarbsPerUnitField.resignFirstResponder()
-//        minutesWalkingField.resignFirstResponder()
+        print("dismissing keyboard")
+        activeTextField?.resignFirstResponder()
     }
     
     func calculateDose() -> Void {
@@ -220,6 +217,7 @@ extension DoseTableViewController: UITextFieldDelegate {
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
+        activeTextField = textField
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let x = textField.text else { return }
