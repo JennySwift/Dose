@@ -216,7 +216,7 @@ extension DoseTableViewController: UITextFieldDelegate {
         return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text = ""
+//        textField.text = ""
         activeTextField = textField
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
