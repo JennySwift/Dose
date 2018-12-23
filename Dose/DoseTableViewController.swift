@@ -17,7 +17,44 @@ struct Row {
 class DoseTableViewController: UITableViewController {
     @IBOutlet weak var doseLabel: UILabel!
     
+    @IBAction func resetFields(_ sender: Any) {
+        print("reseting fields...")
+        bloodSugarNow = 0
+        
+        bloodSugarGoal = 4.5
+        netCarbs = 0
+//        netCarbsPerUnit = 0
+        minutesWalking = 0
+        novoRapid = 0
+        lantus = 0
+
+        updateRowValues()
+        tableView.reloadData()
+        calculateDose()
+    }
+    
+    func updateRowValues() -> Void {
+        rows[0].value = bloodSugarNow
+        rows[1].value = bloodSugarGoal
+        rows[2].value = netCarbs
+        rows[3].value = netCarbsPerUnit
+        rows[4].value = minutesWalking
+        rows[5].value = novoRapid
+        rows[6].value = lantus
+    }
+    
+
     //Mark: Properties
+    var bloodSugarNow: Float = 0.0
+    var bloodSugarGoal: Float = 4.5
+    var netCarbs: Float = 0.0
+    var netCarbsPerUnit: Float = 44.1
+    var minutesWalking: Float = 0
+    var novoRapid: Float = 0
+    var lantus: Float = 0
+    var dose: Float = 0.0
+    var correctionFactor: Float = 3.0
+    
     var rows: [Row] = [
         Row(label: "Blood Sugar Now", value: 0.0, tag: 0),
         Row(label: "Blood Sugar Goal", value: 4.5, tag: 1),
@@ -27,16 +64,6 @@ class DoseTableViewController: UITableViewController {
         Row(label: "NovoRapid", value: 0.0, tag: 5),
         Row(label: "Lantus", value: 0.0, tag: 6),
     ]
-    
-    var bloodSugarNow: Float = 3.4
-    var bloodSugarGoal: Float = 4.5
-    var netCarbs: Float = 0.0
-    var netCarbsPerUnit: Float = 44.1
-    var minutesWalking: Float = 0
-    var novoRapid: Float = 0
-    var lantus: Float = 0
-    var dose: Float = 0.0
-    var correctionFactor: Float = 3.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -201,18 +228,25 @@ extension DoseTableViewController: UITextFieldDelegate {
         switch textField.tag {
         case 0:
             bloodSugarNow = value
+            rows[0].value = value
         case 1:
             bloodSugarGoal = value
+            rows[1].value = value
         case 2:
             netCarbs = value
+            rows[2].value = value
         case 3:
             netCarbsPerUnit = value
+            rows[3].value = value
         case 4:
             minutesWalking = value
+            rows[4].value = value
         case 5:
             novoRapid = value
+            rows[5].value = value
         case 6:
             lantus = value
+            rows[6].value = value
         default:
             return
         }
